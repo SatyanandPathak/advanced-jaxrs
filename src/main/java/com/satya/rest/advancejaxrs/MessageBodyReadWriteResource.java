@@ -11,9 +11,16 @@ import javax.ws.rs.core.MediaType;
 @Path("/messagebodydemo")
 public class MessageBodyReadWriteResource {
 	
-	@Produces(MediaType.TEXT_PLAIN)
+//	@Produces(MediaType.TEXT_PLAIN)
+//	@GET
+//	public Date getDate(){
+//		return Calendar.getInstance().getTime();
+//	}
+	
+	@Path("/customMediaType")
+	@Produces({"text/shortDate", MediaType.TEXT_PLAIN})
 	@GET
-	public Date getDate(){
+	public Date getCustomDate(){
 		return Calendar.getInstance().getTime();
 	}
 

@@ -21,3 +21,35 @@ Message Body Readers and Message Body Writers:
 2.	ParamConverters converts the Params
 
 
+Custom Message Body Writers:
+1. Implement MessageBodyWriter<T> and put @Provider annotation
+
+Filters:
+1. We use filter for cross cutting concern for Ex: logging after each Request and/or Response
+2. Implement ContainerRequestFilter and ContainerResponseFilter
+
+Auth:
+1. Basic Auth. Suitable only for SSL or HTTPS. Base64.(encodeusername:password).
+2. It is encoded but not secured. It can easly be decoded and details can be hacked
+3. Other options are:
+	 a. Digest Access Auth(MD5 Hashing) 
+	 b. Assymetric Cryptography(Public and Private Key) 
+	 3. OAuth 
+	 4. JSON Web Tokens
+
+
+
+
+
+Important Links:
+
+Base URL: http://localhost:8080/advanced-jsxrs/webapi
+Date Resource: http://localhost:8080/advanced-jsxrs/webapi/date/today
+Singleton Demo: http://localhost:8080/advanced-jsxrs/webapi/singleton/pathParam?query=queryParam
+Custom Message Writer Demo: http://localhost:8080/advanced-jsxrs/webapi/messagebodydemo/customMediaType
+							Accept: text/shortDate or text/plain
+
+
+
+
+
